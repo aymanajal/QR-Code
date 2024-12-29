@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "网页二维码",
+  "version": "1.0.0",
+  "description": "优雅的网页二维码生成工具",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "web_accessible_resources": [{
+    "resources": ["icons/qr-icon.png"],
+    "matches": ["<all_urls>"]
+  }],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["content.css"],
+      "js": ["qrcode.js", "content.js"]
+    }
+  ]
+} 

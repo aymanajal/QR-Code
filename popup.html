@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>网页二维码</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // 用于检查 QRCode 是否加载成功
+    window.QRCodeLoaded = false;
+    
+    // 添加调试信息
+    console.log('初始化 QRCodeLoaded:', window.QRCodeLoaded);
+    
+    window.addEventListener('error', function(e) {
+      console.error('Script error:', e);
+    });
+  </script>
+  <script src="qrcode.js" onload="window.QRCodeLoaded = true; console.log('QRCode 库加载完成');"
+    onerror="console.error('QRCode 库加载失败');">
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div id="qrcode-container">
+      <div id="qrcode"></div>
+      <img id="favicon" src="" alt="网站图标">
+    </div>
+    <div id="site-name"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 
